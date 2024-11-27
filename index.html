@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrancyDesigner</title>
+    <link rel="icon" href="./assets/logo1.png">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div id="logo">
+            <img class="img-header" src="./assets/logo1.png" alt="logo">
+        </div>
+        <div id="icon">
+            <a href="https://www.facebook.com/profile.php?id=100090445591968&mibextid=ZbWKwL"><img class="img-icon" src="./assets/facebook.png" alt=""></a>
+            <a href="https://www.instagram.com/francy_designer_sobrancelhas?igsh=anZpY2s3cjE2dHc3"><img class="img-icon" src="./assets/instagram.png" alt=""></a>
+            <a href="https://api.whatsapp.com/send/?phone=5593991482322&text&type=phone_number&app_absent=0&wame_ctl=1&fbclid=PAY2xjawGz_c1leHRuA2FlbQIxMAABpgjVaD43dIM9qJP3jfmZ7kSu2W5PvRN8JgH4PFOMuHWXPWDl0QKWbO9v2A_aem_M8X80kYvDl2v9mXvpX6VzA"><img class="img-icon" src="./assets/whatsapp.png" alt=""></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <!-- Texto do lado esquerdo -->
+        <div class="text-left">
+            <h1 id="title">Sobrancelhas Perfeitas</h1>
+            <p id="description">Realce sua beleza natural com design especializado.</p>
+        </div>
+        <!-- Círculo e Imagem do lado direito -->
+        <div class="circle-container">
+            <!-- Círculo Maior -->
+        <div id="circle" class="circle">
+            <img id="circle-image" src="./assets/pinca.png" alt="Pinça">
+        </div>
+
+        </div>
+    </div>
+
+    <!-- Footer (Menu) -->
+    <footer>
+        <div class="menu-circle" id="pinca" onclick="changeStyle('pinca')">
+            <img src="./assets/pinca.png" alt="Pinça">
+        </div>
+        <div class="menu-circle" id="pente" onclick="changeStyle('pente')">
+            <img src="./assets/pente.png" alt="Pente">
+        </div>
+        <div class="menu-circle" id="henna" onclick="changeStyle('henna')">
+            <img src="./assets/henna.png" alt="Henna">
+        </div>
+        <div class="menu-circle" id="bisturi" onclick="changeStyle('bisturi')">
+            <img src="./assets/bisturi.png" alt="Bisturi">
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

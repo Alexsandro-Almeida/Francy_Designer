@@ -1,0 +1,276 @@
+/* Reset básico e configurações globais */
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.img-header{
+    width: 20%;
+}
+
+#icon {
+    width: fit-content;
+}
+
+.img-icon {
+    float: right;
+    margin-left: 2%;
+    margin-top: 1%;
+    width: 5%;
+} 
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 0 100px;
+}
+
+.text-left {
+    flex: 1;
+    text-align: left;
+    padding-right: 50px;
+    margin-left: 20px;
+}
+
+.text-left h1 {
+    font-size: 3em;
+    color: #e91e63;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeIn 1s forwards;
+}
+
+.text-left p {
+    font-size: 1.3em;
+    margin: 10px 0;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeIn 1.5s forwards;
+}
+
+/* Animação de fade-in para o texto */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animação da imagem do círculo - Aparecendo de baixo para cima */
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.circle-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
+}
+
+/* Círculo e Imagem Maior */
+.circle {
+    position: absolute;
+    bottom: -400px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: #fce4ec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: rotate(-10deg);
+    transition: all 0.3s ease-in-out;
+}
+
+.circle img {
+    width: 320px;
+    opacity: 1;
+    animation: float 3s ease-in-out infinite; /* Flutuação contínua */
+    transform: translateY(50px);  /* Começa fora da tela (abaixo) */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Posição inicial */
+    }
+    50% {
+        transform: translateY(-15px); /* Sobe */
+    }
+    100% {
+        transform: translateY(0); /* Volta à posição inicial */
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+    overflow: hidden;
+    }
+
+    .circle {
+    position: absolute;
+    bottom: -90px;
+    right: -150px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #fce4ec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: rotate(-10deg);
+    transition: all 0.3s ease-in-out;
+}
+
+ .text-left h1 {
+    font-size: 1.9em;
+ }
+
+ .text-left p {
+    font-size: 1em;
+ }
+
+ .img-icon {
+    width: 15% ;
+ }
+
+
+.circle img {
+    width: 220px;
+    opacity: 1;
+    transform: translateY(50px);  /* Começa fora da tela (abaixo) */
+    animation: float 3s ease-in-out infinite; /* Flutuação contínua */
+}   
+
+
+
+}
+
+/* Reiniciar a animação ao clicar */
+.circle.animate img {
+    animation: slideUp 1s ease-out forwards;  /* Aparecer de baixo para cima */
+    animation: float 3s ease-in-out infinite; /* Flutuação contínua */
+}
+
+.circle.animate {
+    animation: slideUp 1s ease-out forwards;  /* Aparecer de baixo para cima */
+}
+
+/* Footer (Menu) */
+footer {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+footer .menu-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.menu-circle img {
+    height: 100%;
+}
+
+/* Efeito de aumento ao passar o mouse */
+footer .menu-circle:hover {
+    transform: scale(1.2);
+}
+
+/* Definir as cores específicas para cada círculo */
+footer .menu-circle.pinca {
+    background-color: #fce4ec; /* Rosa */
+}
+
+footer .menu-circle.pente {
+    background-color: #e1bee7; /* Lilás */
+}
+
+footer .menu-circle.henna {
+    background-color: #8d6e63; /* Castanho */
+}
+
+footer .menu-circle.bisturi {
+    background-color: #f5e1b0; /* Nude */
+}
+
+/* Alteração de cor no título e fundo */
+.pinca body {
+    background-color: #fce4ec;
+}
+
+.pente body {
+    background-color: #e1bee7;
+}
+
+.henna body {
+    background-color: #8d6e63;
+}
+
+.bisturi body {
+    background-color: #f5e1b0;
+}
+
+/* Alteração de cor no título */
+.pinca h1 {
+    color: #e91e63;
+}
+
+.pente h1 {
+    color: #9c27b0;
+}
+
+.henna h1 {
+    color: #6d4c41;
+}
+
+.bisturi h1 {
+    color: #c8b400;
+}
